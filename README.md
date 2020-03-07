@@ -1,3 +1,0 @@
-# ISCI
-
-fadhila buthak
