@@ -38,7 +38,7 @@ class PanelController extends Controller
     public function print()
     {
         //
-        $logeduser = \App\User::find(session('loggedas'));
+        $logeduser = \App\User::findOrFail(session('loggedas'));
         $userdojang = \App\Dojang::find($logeduser['id_dojang']);
         $usermedal = \App\Achievement::where('username', $logeduser['username'])->get();
 

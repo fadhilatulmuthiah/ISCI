@@ -215,7 +215,7 @@
 													<br>
 													<div class="dropdown-divider"></div>
 													<br>
-
+													@if(Session::get('auth')!='student')
 													<!-- <fieldset id="exam_form"> -->
 														<h4 class="head-top">Examination Detail <sub>
 																<font color='blue'>*left this forms empty for white belt</font>
@@ -249,6 +249,7 @@
 															<input type="number" step="0.01" class="form-control" id="score" name="score" min=0 max=10 placeholder="Exam Score 1" value="{{ old('score') }}" disabled>
 															@endif
 														</div>
+													@endif
 													<!-- </fieldset> -->
 
 													<button type="submit" class="btn btn-primary">Submit</button>

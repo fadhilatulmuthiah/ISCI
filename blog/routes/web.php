@@ -24,7 +24,7 @@ Route::get('/logout', 'LoginController@logout');
 
 Route::get('/panel', 'PanelController@index');
 Route::get('/print_dashboard', function () {
-    $logeduser = \App\User::find(session('token'));
+    $logeduser = \App\User::find(session('loggedas'));
     $userdojang = \App\Dojang::find($logeduser['id_dojang']);
     $usermedal = \App\Achievement::where('username', $logeduser['username'])->get();
 
