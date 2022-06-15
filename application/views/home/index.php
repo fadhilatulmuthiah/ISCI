@@ -104,7 +104,7 @@
 				<form action="#" method="post">
 					<div class="reg-fom-btm mt-3">
 						<div class="fields">
-							<span class="text-white mb-2">Neme</span>
+							<span class="text-white mb-2">Name</span>
 							<div>
 								<input type="text" name="name" placeholder="Full Name">
 							</div>
