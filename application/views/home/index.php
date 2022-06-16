@@ -38,12 +38,6 @@
 </section>
 <!-- Start Carousel -->
 
-<?php 
-	$conn = mysqli_connect("localhost", "root", "", "isci");
-	$loc = mysqli_query($conn, "SELECT * FROM lokasi");
-	$belt = mysqli_query($conn, "SELECT * FROM belt");
- ?>
-
 <!-- Locations -->
 <section class="banner_form py-5">
 	<div class="container py-md-4 mt-md-3">
@@ -51,16 +45,18 @@
 		<div class="row ban_form mt-3 pt-md-5">
 			<div class="bg-white">
 				<div class="row">
-					<!-- Start Eachfor -->
-					<?php while ($location = mysqli_fetch_array($loc)) : ?>
-					<div class="col-md-6 categories_sub cats">
-						<div class="categories_sub1">
-							<h3 class="mt-3"><?= $location["nama_lokasi"] ?></h3>
-							<p class="mt-3 mb-5"><?= $location["alamat"] ?></p>
+					<?php if (isset($location)){ ?>
+						<div class="col-md-6 categories_sub cats">
+							<!-- Start Eachfor -->
+							<?php foreach ($location as $key) { ?>
+								<div class="categories_sub1">
+									<h3 class="mt-3"><?= $key->nama_lokasi ?></h3>
+									<p class="mt-3 mb-5"><?= $key->alamat ?></p>
+								</div>
+							<?php } ?>
+							<!-- End Eachfor -->
 						</div>
-					</div>
-					<?php endwhile; ?>
-					<!-- End Eachfor -->
+					<?php } ?>
 				</div>
 			</div>
 		</div>
@@ -122,11 +118,13 @@
 						<div class="fields">
 							<span class="text-white mb-2">Locations</span>
 							<select class="form-control">
+							<?php if (isset($location)){ ?>
 								<!-- Start Eachfor -->
-								<?php while ($location = mysqli_fetch_array($loc)) : ?>
-								<option><?= $location["nama_lokasi"] ?></option>
-								<?php endwhile; ?>
+								<?php foreach ($location as $key) { ?>
+									<option><?= $key->nama_lokasi ?></option>
+								<?php } ?>
 								<!-- End Eachfor -->
+							<?php } ?>
 							</select>
 						</div>
 					</div>
@@ -134,11 +132,13 @@
 						<div class="fields">
 							<span class="text-white mb-2">Belt Level</span>
 							<select class="form-control">
+							<?php if (isset($belt)){ ?>
 								<!-- Start Eachfor -->
-								<?php while ($beltcolor = mysqli_fetch_array($belt)) : ?>
-								<option><?= $beltcolor["warna"] ?></option>
-								<?php endwhile; ?>
+								<?php foreach ($belt as $key) { ?>
+									<option><?= $key->warna ?></option>
+								<?php } ?>
 								<!-- End Eachfor -->
+							<?php } ?>
 							</select>
 						</div>
 					</div>
@@ -158,21 +158,21 @@
 		<h3 class="w3ls-title text-uppercase text-center">Lates Post</h3>
 		<div class="card-deck mt-md-3 pt-5">
 			<div class="card">
-				<img src="images/g1.jpg" class="img-fluid" alt="Card image cap">
+				<img src=<?= base_url('assets/front_dashboard/images/g1.jpg') ?> class="img-fluid" alt="Card image cap">
 				<div class="card-body w3ls-card">
 					<h5 class="card-title">Learn Photoshop.</h5>
 					<p class="card-text mb-3 ">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
 				</div>
 			</div>
 			<div class="card">
-				<img src="images/g1.jpg" class="img-fluid" alt="Card image cap">
+				<img src=<?= base_url('assets/front_dashboard/images/g1.jpg') ?> class="img-fluid" alt="Card image cap">
 				<div class="card-body w3ls-card">
 					<h5 class="card-title">Learn Photoshop.</h5>
 					<p class="card-text mb-3 ">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
 				</div>
 			</div>
 			<div class="card">
-				<img src="images/g1.jpg" class="img-fluid" alt="Card image cap">
+				<img src=<?= base_url('assets/front_dashboard/images/g1.jpg') ?> class="img-fluid" alt="Card image cap">
 				<div class="card-body w3ls-card">
 					<h5 class="card-title">Learn Photoshop.</h5>
 					<p class="card-text mb-3 ">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
