@@ -8,6 +8,7 @@ class Home extends CI_Controller {
         parent::__construct();
         $this->load->model("location_model");
         $this->load->model("belt_model");
+        $this->load->model("register_model");
         $this->load->library('form_validation');
     }
 
@@ -21,6 +22,20 @@ class Home extends CI_Controller {
         $this->load->view('template/header');
         $this->load->view('home/index', $data);
         $this->load->view('template/footer');
+    }
+
+    public function add()
+    {
+        $register = $this->register_model;
+        $validation = $this->form_validation;
+        $validation->set_rules($register->rules());
+
+        if ($validation->run()) {
+            $register->save();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        }
+
+        redirect('/');
     }
 
     public function coach()

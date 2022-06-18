@@ -97,7 +97,7 @@
 		<div class="bg-pricemain">
 			<div class="reg-fom">
 				<h4 class="text-white text-center">Registration</h4>
-				<form action="#" method="post">
+				<form action="<?php echo site_url('home/add') ?>" method="post">
 					<div class="reg-fom-btm mt-3">
 						<div class="fields">
 							<span class="text-white mb-2">Name</span>
@@ -117,11 +117,11 @@
 					<div class="reg-fom-btm mt-3">
 						<div class="fields">
 							<span class="text-white mb-2">Locations</span>
-							<select class="form-control">
+							<select class="form-control" name="location">
 							<?php if (isset($location)){ ?>
 								<!-- Start Eachfor -->
 								<?php foreach ($location as $key) { ?>
-									<option><?= $key->nama_lokasi ?></option>
+									<option value="<?= $key->id ?>"><?= $key->nama_lokasi ?></option>
 								<?php } ?>
 								<!-- End Eachfor -->
 							<?php } ?>
@@ -131,11 +131,11 @@
 					<div class="reg-fom-btm mt-3">
 						<div class="fields">
 							<span class="text-white mb-2">Belt Level</span>
-							<select class="form-control">
+							<select class="form-control" name="belt">
 							<?php if (isset($belt)){ ?>
 								<!-- Start Eachfor -->
 								<?php foreach ($belt as $key) { ?>
-									<option><?= $key->warna ?></option>
+									<option value="<?= $key->id ?>"><?= $key->warna ?></option>
 								<?php } ?>
 								<!-- End Eachfor -->
 							<?php } ?>
