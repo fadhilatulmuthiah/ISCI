@@ -49,7 +49,8 @@ class Home extends CI_Controller {
     {
         $this->load->view('home/login');
     }
-
+    
+// nanti disetting ulang untuk login per role
     public function student()
     {
         $this->load->view('home/student');

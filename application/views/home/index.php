@@ -44,7 +44,7 @@
 		<h3 class="w3ls-title text-uppercase text-center">our locations</h3>
 		<div class="row ban_form mt-3 pt-md-5">
 			<div class="bg-white">
-				<div class="row">
+				<div class="tr.collapse.show">
 					<?php if (isset($location)){ ?>
 						<div class="col-md-6 categories_sub cats">
 							<!-- Start Eachfor -->
