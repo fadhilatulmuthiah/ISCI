@@ -38,6 +38,7 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/home/coach', 'Home::coach');
 $routes->post('/home/add', 'Home::add');
+$routes->get('/home/login', 'Home::login');
 
 /*
  * --------------------------------------------------------------------
