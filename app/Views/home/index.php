@@ -1,3 +1,4 @@
+<section class="w3l-banner">
 <!-- Start Carousel -->
 <div class="container">
 	<div class="flexslider-info">

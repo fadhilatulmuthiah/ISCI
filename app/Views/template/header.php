@@ -38,7 +38,7 @@
 <body>
 <!-- banner -->
 <header></header>
-<section class="w3l-banner">
+<section>
 <div class="wthree-dot">
 	<!-- nav -->
 	<div class="w3layouts-nav-right">
@@ -47,11 +47,13 @@
 				<ul>
 					<li><a href="<?= base_url('/'); ?>">Home</a></li>
 					<li><a href="<?= base_url('home/coach'); ?>">Coach</a></li>
-					<li><a href="<?= base_url('home/login'); ?>">Login</a></li>
+					<li><a href="<?= base_url('ho`me/login'); ?>">Login</a></li>
 					<!-- test -->
 					<li><a href="<?= base_url('home/student'); ?>">Studet</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>		
-	<!-- //nav 
+	<!-- //nav -->
+</div>
+</section>
