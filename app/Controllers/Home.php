@@ -82,7 +82,8 @@ class Home extends BaseController {
 // nanti disetting ulang untuk login per role
     public function student()
     {
-        return view('home/student');
+        return view('template/headdash')
+            . view('home/student');
     }
 
 }

@@ -1,7 +1,5 @@
 
-</section>
-<!-- //banner -->
-	
+
 <?php 
 	$conn = mysqli_connect("localhost", "root", "", "isci");
 	$user = mysqli_query($conn, "SELECT * FROM user");
